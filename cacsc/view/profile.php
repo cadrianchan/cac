@@ -49,11 +49,11 @@ if (isset($_FILES['image']['name'])) {
         $tmp = imagecreatetruecolor($tw, $th);
         imagecopyresampled($tmp, $src, 0, 0, 0, 0, $tw, $th, $w, $h);
         //sharpen image
-        imageconvolution($tmp, array(
+        /*imageconvolution($tmp, array(
             array(-1, -1, -1),
             array(-1, 16, -1),
             array(-1, -1, -1)
-                ), 8, 0);
+                ), 8, 0);*/
         imagejpeg($tmp, $dest);
         imagedestroy($tmp);
         imagedestroy($src);

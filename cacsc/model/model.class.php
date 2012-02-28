@@ -110,9 +110,9 @@ class model {
     }
 
     function showProfile($user) {
-        $msg = "";
+        $msg = "$user's Profile:<br/>";
         if (file_exists("uploads/profiles/$user.jpg")) {
-            $msg = "<img src='uploads/profiles/$user.jpg' border='1' align='left' />";
+            $msg = $msg . "<img src='uploads/profiles/$user.jpg' border='1' align='left' />";
         }
 
         $result = $this->queryMysql("select * from profiles where user='$user'");
@@ -149,6 +149,7 @@ class model {
     }
 
     function followedByUser($user) {
+	$friends = array();
         $query = "select user from friends where follower='$user'";
         $results = $this->queryMysql($query);
         while ($row = mysql_fetch_array($results)) {
@@ -210,3 +211,4 @@ class model {
 }
 
 ?>
+
