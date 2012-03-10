@@ -1,0 +1,25 @@
+/* 
+    Document   : site
+    Created on : Mar 3, 2012, 6:15:01 PM
+    Author     : cadrianchan
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body {
+    background-color: ivory;
+}
+
+.error {
+    font-family: cursive;
+    color: red;
+}
+
+.whisper {
+    font-family: cursive;
+    color: red;
+}

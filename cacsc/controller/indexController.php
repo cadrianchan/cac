@@ -4,6 +4,7 @@ class indexController extends baseController {
 
     public function index() {
         $this->registry->template->show('index');
+        $this->registry->template->show('footer');
     }
 
     public function teams() {
@@ -11,6 +12,7 @@ class indexController extends baseController {
         $this->registry->template->teamnames = $teamnames;
         $this->registry->template->show('header');
         $this->registry->template->show('teams');
+        $this->registry->template->show('footer');
     }
 
     public function goals() {
@@ -18,6 +20,7 @@ class indexController extends baseController {
         $this->registry->template->topscorers = $topscorers;
         $this->registry->template->show('header');
         $this->registry->template->show('goals');
+        $this->registry->template->show('footer');
     }
 
     public function assists() {
@@ -25,11 +28,13 @@ class indexController extends baseController {
         $this->registry->template->topassists = $topassists;
         $this->registry->template->show('header');
         $this->registry->template->show('assists');
+        $this->registry->template->show('footer');
     }
 
     public function schedule() {
         $this->registry->template->show('header');
         $this->registry->template->show('schedule');
+        $this->registry->template->show('footer');
     }
 
     public function signup() {
@@ -37,6 +42,7 @@ class indexController extends baseController {
         $this->registry->template->teamnames = $teamnames;
         $this->registry->template->show('header');
         $this->registry->template->show('signup');
+        $this->registry->template->show('footer');
     }
 
 }

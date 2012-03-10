@@ -11,7 +11,7 @@
 
                 <?php
                 foreach ($topassists as $topassist) {
-                    echo "<tr><td>" . $topassist['user'] . "</td><td>" . $topassist['assists'] . "</td><td>". $topassist['team'] . "</td><td><img src='uploads/profiles/" . $topassist['user'] . ".jpg' width=100 height=100></td><tr>";
+                    echo "<tr><td>" . $topassist['user'] . "</td><td>" . $topassist['assists'] . "</td><td>". $topassist['team'] . "</td><td><img src='uploads/profiles/" . $topassist['user'] . ".jpg' /></td><tr>";
                 }
                 ?>
 

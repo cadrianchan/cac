@@ -41,7 +41,7 @@ if (count($messages)) {
             if ($message['pm'] == 0) {
                 echo "wrote: &quot;" . $message['message'] . "&quot; ";
             } else {
-                echo "whispered: <i><font color='red'>&quot;" . $message['message'] . "&quot;</font></i> ";
+                echo "whispered: <span class='whisper'>&quot;" . $message['message'] . "&quot;</span> ";
             }
             if ($message['recip'] == $user) {
                 echo "[<a href='index.php?rt=profile/messages&view=$view&erase=" . $message['id'] . "'>erase</a>]";
