@@ -10,10 +10,6 @@ root {
     display: block;
 }
 
-body {
-    background-color: ivory;
-}
-
 .error {
     font-family: cursive;
     color: red;
@@ -22,4 +18,125 @@ body {
 .whisper {
     font-family: cursive;
     color: red;
+}
+
+.header {   
+    background-color: #A00000;
+    color: white;
+}
+
+.header #header_text {
+    margin-left: 8px;
+}
+
+.header #header_text a {
+    text-decoration: none;
+    color: white;
+}
+
+.header #header_login {
+    text-align: right;
+    float: right;
+    margin-right: 8px;
+}
+
+.header #button_login {
+    border: 1px outset white;
+    background: white;
+    color: #A00000;
+}
+.header #button_login:hover {
+    border: 1px solid white;
+    background: #A00000;
+    color: white;
+}
+
+.header #login_err {
+    color: black;
+    font-family: serif;
+}
+
+body {
+    height: 100%;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.sidebar {
+    float: left;
+    width: 20%;
+    font-size: 18px;
+}
+
+.content {
+    float: right;
+    width: 80%;
+}
+
+ul.nav {
+    list-style: none;
+}
+
+ul.nav a, ul.nav a:visited {
+    padding: 5px 5px 5px 15px;
+    display: block;
+    text-decoration: none;
+    color: #A00000;
+}
+
+ul.nav a:hover {
+    background: #A00000;
+    color: white;
+}
+
+
+.signup {
+    float: left;
+    width: 30%;
+    text-align: center;
+    margin-top: 330px;
+    color: #A00000;
+}
+
+.logo {
+    float: right;
+    width: 70%;
+    margin-top: 100px;
+}
+
+.signup #submit{
+    color: white;
+    background: #A00000;
+    border: 2px outset #A00000;
+}
+
+.signup #teamname {
+    background: #A00000;
+    color: white;
+    width: 14.2em;
+}
+
+.signup table {
+    text-align: left;
+}
+
+.signup fieldset {
+    border: 1px solid #A00000;
+    width: 15em;
+}
+
+.signup legend {
+    color: white;
+    background: #A00000;
+    border: 1px solid #A00000;
+    padding: 2px 6px;
+}
+
+.statstable {
+    margin-left: 50px;
+    margin-top: 20px;
 }

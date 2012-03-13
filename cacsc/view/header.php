@@ -1,3 +1,27 @@
+<?php
+session_start();
+
+$error = $user = $pass = "";
+if (isset($_POST['user'])) {
+    $user = sanitizeString($_POST['user']);
+    $pass = sanitizeString($_POST['pass']);
+
+    if ($user == "" || $pass == "") {
+        $error = "Not all fields were entered! ";
+    } else {
+        $login = $this->registry->model->userLogin($user, $pass);
+        if ($login) {
+            $_SESSION['username'] = $user;
+            header('Location: index.php?rt=profile');
+            exit;
+        } else {
+            $error = "Wrong Username or Password! ";
+        }
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -17,14 +41,16 @@
     <body>
         <div class="container">
             <div class="header">
-                <img src='resource/images/logo.jpg' alt='logo' />
-                <h2>Chinatown Athletics Council - City Soccer League 2012</h2>
-                <a href='index.php?rt=index'>Welcome</a> |
-                <a href='index.php?rt=index/teams'>Teams</a> |
-                <a href='index.php?rt=index/goals'>Goals</a> |
-                <a href='index.php?rt=index/assists'>Assists</a> |
-                <a href='index.php?rt=index/schedule'>Schedule/Results</a> &nbsp;&nbsp;&nbsp;
-                <a href='index.php?rt=index/signup'>Sign up</a><br/><br/>
-            <!-- end .header --></div>
-            <div class="content">
-            
+                <?php
+                echo <<<_END
+                <br/>
+                <form method='post' action='index.php?rt=index'>
+                <span id='header_text'><a href='index.php?rt=index'>CHINATOWN ATHLETICS COUNCIL</a></span>
+                <div id='header_login'><span id='login_err'>$error</span> Username <input type='text' maxlength='32' name='user' value='$user' /> Password <input type='password' maxlength='16' name='pass' value='$pass' />
+                <input type='submit' value='Log In' id='button_login' /></div>
+                <div style="clear: both;"></div>
+                </form>
+                <br/>
+_END;
+                ?>
+                <!-- end .header --></div>
