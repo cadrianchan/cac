@@ -41,16 +41,25 @@ class model {
     }
 
     function userSignup($user, $pass, $team) {
+        $user = sanitizeString($user);
+        if(!preg_match('/^[a-zA-Z0-9_-]{3,16}$/', $user)) {
+            return "Only alphabets, digits, underscores and hyphens are accepted";
+        }
+        $pass = sanitizeString($pass);
+        if(!preg_match('/^[a-zA-Z0-9_-]{3,16}$/', $pass)) {
+            return "Only alphabets, digits, underscores and hyphens are accepted";
+        }
+        
         $query = "select * from members where user='$user'";
         if (mysql_num_rows($this->queryMysql($query))) {
-            return false;
+            return "Username already exists!<br/><br/>";
         } else {
             $query = "insert into members values('$user', '$pass')";
             $this->queryMysql($query);
             $query = "insert into stats values('$user', '0', '0', '$team')";
             $this->queryMysql($query);
             copy('uploads/profiles/blank.jpg', "uploads/profiles/$user.jpg");
-            return true;
+            return "<h4>Account created. </h4>Please Log in.<br/>";
         }
     }
 

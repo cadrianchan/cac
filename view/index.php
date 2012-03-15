@@ -10,12 +10,7 @@
             if ($username == "" || $password == "") {
                 $error = "Not all fields were entered!<br/><br/>";
             } else {
-                $signup = $this->registry->model->userSignup($username, $password, $team);
-                if ($signup) {
-                    $error = "<h4>Account created. </h4>Please Log in.<br/>";
-                } else {
-                    $error = "Username already exists!<br/><br/>";
-                }
+                $error = $this->registry->model->userSignup($username, $password, $team);
             }
         }
 
