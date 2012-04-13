@@ -33,6 +33,7 @@ class model {
     }
 
     function getTeamnames() {
+        $teamnames = array();
         $results = $this->queryMysql('select teamnames from teams');
         while ($row = mysql_fetch_array($results)) {
             $teamnames[] = $row[0];
@@ -73,6 +74,7 @@ class model {
     }
 
     function getTopScorers() {
+        $topscorers = array();
         $results = $this->queryMysql('select user, goals, team from stats order by goals desc limit 5');
         while ($row = mysql_fetch_array($results)) {
             $topscorers[] = array('user' => $row[0], 'goals' => $row[1], 'team' => $row[2]);
@@ -81,6 +83,7 @@ class model {
     }
 
     function getTopAssists() {
+        $topassists = array();
         $results = $this->queryMysql('select user, assists, team from stats order by assists desc limit 5');
         while ($row = mysql_fetch_array($results)) {
             $topassists[] = array('user' => $row[0], 'assists' => $row[1], 'team' => $row[2]);
