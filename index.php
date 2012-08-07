@@ -1,5 +1,4 @@
 <?php
-error_reporting(E_ALL);
 
 define('SITEPATH', realpath(dirname(__FILE__)));
 
